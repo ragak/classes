@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1421879153128.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6F259E6A",
+    "lastKnownWriteTime" : 140247862018048,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "tab",
+        "contentUrl" : "content?title=tab&file=456d245ca1b3447787d2f160a2923fb4.htm",
+        "displayedObservations" : 83,
+        "displayedVariables" : 11,
+        "totalObservations" : 83,
+        "variables" : 11
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

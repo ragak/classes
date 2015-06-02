@@ -1,0 +1,17 @@
+{
+    "contents" : "rm(list=ls())\n#--Define data file directory:\nsetwd(\"/Users/Raga/Dropbox/Documents/Stem_cell_epigenetics/MNase/\")\n\n#--Read in table of data (from Sanderson et al. 2006):\n# This refers to a sample of 20 clusters of galaxies with Chandra X-ray data\nR <- read.table(\"MNase-enhdY1-R.txt\", sep=\"\\t\", header=TRUE)\ndY <- read.table(\"MNase-enhdY1-dY.txt\", sep=\"\\t\", header=TRUE)\ndYKO <- read.table(\"MNase-enhdY1-dYKO.txt\", sep=\"\\t\", header=TRUE)\n#nCC <- read.table(paste(dir, \"mean_Tprofile-nCC.txt\", sep=\"/\"), header=TRUE)\n\n#--Load extra library:\n## if not already installed, then run:\n# install.packages(\"ggplot2\")\nrequire(ggplot2)\n\n#--Combine datasets into a single data frame:\nR$type <- \"R\"\ndY$type <- \"dY\"\ndYKO$type <- \"dYKO\"\nA <- rbind(R,dY,dYKO)\n\n#--Define axis labels:\nxlabel <- \"bp\"\nylabel <- \"Relative Protection\"\n\np <- ggplot(data=A, aes(x=bp, y=dY1.ave, ymin=dY1.lower, ymax=dY1.upper, fill=type, linetype=type)) + \n    geom_line() + \n    geom_ribbon(alpha=0.5) + \n    xlab(xlabel) + \n    ylab(ylabel) +\n    scale_fill_manual(values = c(\"gold3\",\"green3\", \"red3\")) +\n    theme_bw() +\n    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), \n                    panel.background = element_blank(), axis.line = element_line(colour = \"black\"))\np\n\nggsave(p, file=\"dY1MNase.pdf\", width=8, height=4.5)\n\n",
+    "created" : 1432325397204.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2379978087",
+    "id" : "462D8F42",
+    "lastKnownWriteTime" : 1432921366,
+    "path" : "~/Dropbox/Documents/Stem_cell_epigenetics/MNase/MNase_metagene.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "rm(list=ls())\n#--Define data file directory:\nsetwd(\"/Users/Raga/Dropbox/Documents/Stem_cell_epigenetics/ChIP_seq/K27a_p300/\")\ndata <- read.table(\"p300vsK27ac.txt\", sep=\"\\t\", header=TRUE)\nplot(data$K27a,data$p300,cex = 0.8, bg=\"black\", pch=16,xlim=c(0,4),ylim=c(0,3))\ncor(data$K27a,data$p300,use=\"complete.obs\",method=c(\"pearson\"))\n    \n",
+    "created" : 1432921378401.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2120029877",
+    "id" : "380364F2",
+    "lastKnownWriteTime" : 140569984630784,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
